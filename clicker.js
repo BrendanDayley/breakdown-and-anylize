@@ -1,30 +1,31 @@
 var cookie = document.getElementById("bigCookie");
 
 function click(){
-    var cook = document.getElementById("productLevel0");
+    var cook = document.getElementById("bigCookie");
     var i = 5000;
     while(i != 0){
         var randNum = Math.floor(Math.random() * 1000);
-        randNum += Math.floor(Math.random() *  10);
+        randNum += Math.floor(Math.random() *  100);
         setTimeout(function() {
             cook.click();
         }, randNum);
-        
+
         i--;
     }
 }
 
-for(i = 100; i != 0; i--){
-    setTimeout(function(){
-        click();
-    }, 2500)
-    i--;
+function clickFast() {
+    for(i = 100; i != 0; i--){
+        setTimeout(function(){
+            click();
+        }, 5000)
+        i--;
+    }
 }
 
-function click(){
+function clickUp(){
     var i = 0;
     while(i < 1000000){
-        
         setTimeout(function() {
             Game.ObjectsById[0].levelUp();
             Game.ObjectsById[1].levelUp();
