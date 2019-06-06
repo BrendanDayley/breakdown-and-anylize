@@ -1,8 +1,8 @@
-convertToRoman = function(num) {
-    if (isNaN(num)) {
+convertToRoman = function(toRoman) {
+    if (isNaN(toRoman)) {
         return "NaN";
     }
-    if (num > 255 || num < 1) {
+    if (toRoman > 255 || toRoman < 1) {
         return "NA"
     }
     roman = "";
@@ -12,18 +12,14 @@ convertToRoman = function(num) {
 
     // loop through our numerals
     for ( k in numerals ) {
-        // compare our parameter to the number values in our numerals object
+        // compare parameter to the number values in the numerals object
         while (num >= numerals[k]){
-            // add the numeral to our return string.
             roman += k;
-            //subtract from our number so that we don't get more numerals than needed.
-            // once we hit zero then the loop will end.
             num -= numerals[k];
         }
     }
     return roman;
 }
-
 
 for (i = 0; i<=256; i++){
     var roman = convertToRoman(i)
